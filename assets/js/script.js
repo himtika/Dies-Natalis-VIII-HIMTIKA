@@ -667,6 +667,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ## GALLERY SECTION
 // POP UP DOKUMENTASI
+const imagePaths = [
+    "assets/images/dokumentasi/diesnat-gallery-1.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-2.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-3.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-4.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-5.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-6.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-7.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-8.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-9.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-10.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-11.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-12.jpg",
+    "assets/images/dokumentasi/diesnat-gallery-13.jpg",
+];
+
 const images = [...document.querySelectorAll('.image')];
 
 // popup
@@ -684,17 +700,27 @@ let index = 0; // will track our current image;
 // Popup Image Diesnat 1
 images.forEach((item, i) => {
     item.addEventListener('click', () => {
-        updateImage(i);
+        index = i; /* baru */
+        // updateImage(i);
+        updateImage(index);
         popup.classList.toggle('active');
         body.style.overflow = 'hidden';
     })
 })
 const updateImage = (i) => {
     // let path = `assets/images/logo/logo-diesnat-gallery-${i+1}.png`;
-    let path = `assets/images/logo/logo-diesnat-gallery.png`;
-    largeImage.src = path;
+    // let path = `assets/images/logo/logo-diesnat-gallery.png`;
+    // largeImage.src = path;
     // imageName.innerHTML = path;
-    imageIndex.innerHTML = `0${i+1}`;
+    // imageIndex.innerHTML = `0${i+1}`;
+    // index = i;
+
+    // pastikan index-nya muter terus (loop)
+    if (i < 0) i = imagePaths.length - 1;
+    if (i >= imagePaths.length) i = 0;
+
+    largeImage.src = imagePaths[i];
+    imageIndex.textContent = (i + 1).toString().padStart(2, '0');
     index = i;
 }
 
@@ -703,23 +729,26 @@ closeBtn.addEventListener('click', () => {
     body.style.overflow = '';
 })
 
-leftArrow.addEventListener('click', () => {
-    if(index > 0){
-        updateImage(index - 1);
-    } else {
-        // balik ke akhir
-        updateImage(images.length - 1);
-    }
-})
+// leftArrow.addEventListener('click', () => {
+//     if(index > 0){
+//         updateImage(index - 1);
+//     } else {
+//         // balik ke akhir
+//         updateImage(images.length - 1);
+//     }
+// })
 
-rightArrow.addEventListener('click', () => {
-    if(index < images.length - 1){
-        updateImage(index + 1);
-    } else {
-        // balik ke awal
-        updateImage(0);
-    }
-})
+// rightArrow.addEventListener('click', () => {
+//     if(index < images.length - 1){
+//         updateImage(index + 1);
+//     } else {
+//         // balik ke awal
+//         updateImage(0);
+//     }
+// })
+
+leftArrow?.addEventListener('click', () => updateImage(index - 1));
+rightArrow?.addEventListener('click', () => updateImage(index + 1));
 // ## GALLERY SECTION
 
 // ## FAQ SECTION
