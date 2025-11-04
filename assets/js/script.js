@@ -275,7 +275,7 @@ createStars();
 
 function createStarsPreloader() {
     const container = document.querySelector(".stars-container-preloader");
-    const numberOfStars = 30;
+    const numberOfStars = 60;
 
     // buat dua batch bintang
     for (let batch = 0; batch < 2; batch++) {
