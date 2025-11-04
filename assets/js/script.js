@@ -201,7 +201,7 @@ window.addEventListener("click", function (event) {
 // }
 function createStars() {
     const container = document.querySelector(".stars-container");
-    const numberOfStars = 400;
+    const numberOfStars = 300;
 
     for (let i = 0; i < numberOfStars; i++) {
         const star = document.createElement("div");
@@ -275,7 +275,7 @@ createStars();
 
 function createStarsPreloader() {
     const container = document.querySelector(".stars-container-preloader");
-    const numberOfStars = 100;
+    const numberOfStars = 30;
 
     // buat dua batch bintang
     for (let batch = 0; batch < 2; batch++) {
