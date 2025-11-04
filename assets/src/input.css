@@ -14,13 +14,198 @@
     --font-orbitron: "Orbitron", sans-serif;
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 img {
     user-select: none;
 }
 
+/* Scrollbar utama */
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* END PRELOADER */
+.astro {
+    position: absolute;
+}
+
+/* astro-biasa tampil dulu, lalu hilang, lalu tampil lagi */
+.astro-biasa {
+    animation: astroSwitch1 1.5s infinite steps(1);
+}
+
+/* astro-melet tampil setelah astro-biasa, lalu hilang */
+.astro-melet {
+    animation: astroSwitch2 1.5s infinite steps(1);
+}
+
+/* ganti gambar secara bergantian setiap 1 detik */
+@keyframes astroSwitch1 {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes astroSwitch2 {
+    0%, 49% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+.rocket {
+    background-color: #fafcf7;
+    height: 50px;
+    width: 25px;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    left: -11px;
+    top: 112px;
+    overflow: visible;
+}
+
+.rocket:before {
+    content: "";
+    position: absolute;
+    background-color: #39beff;
+    height: 20px;
+    width: 55px;
+    border-radius: 50% 50% 0 0;
+    z-index: 1;
+    right: -15px;
+    bottom: 0;
+}
+
+.rocket:after {
+    content: "";
+    position: absolute;
+    background-color: #39beff;
+    height: 4px;
+    width: 15px;
+    border-radius: 0 0 2px 2px;
+    bottom: -4px;
+    left: 4.3px;
+}
+
+.rocket .fire {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 30px;
+    background: radial-gradient(
+        ellipse at center,
+        #ffec85 0%,
+        #ffae34 40%,
+        #ec760c 70%,
+        #cd4606 90%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    border-radius: 50%;
+    animation: flame 0.3s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes flame {
+    0% {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(-50%) scaleY(1.4);
+        opacity: 0.5;
+    }
+}
+
+.rocket .gas {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: rgba(200, 200, 200, 0.6);
+    border-radius: 50%;
+    animation: gas 1.5s infinite ease-out;
+}
+.rocket .gas:nth-child(3) {
+    animation-delay: 0.3s;
+    left: 40%;
+}
+.rocket .gas:nth-child(4) {
+    animation-delay: 0.6s;
+    left: 60%;
+}
+
+@keyframes gas {
+    0% {
+        transform: translateX(-50%) scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-50%) translateY(40px) scale(1.8);
+        opacity: 0;
+    }
+}
+
+.window {
+    background-color: #151845;
+    height: 10px;
+    width: 10px;
+    border: 2px solid #b8d2ec;
+    border-radius: 50%;
+    position: relative;
+    top: 17px;
+    left: 5px;
+}
+
+.dots::after {
+    content: "";
+    display: inline-block;
+    animation: dots 2s steps(4, end) infinite;
+    text-align: left;
+}
+
+@keyframes dots {
+    0% {
+        content: "";
+    }
+    25% {
+        content: ".";
+    }
+    50% {
+        content: "..";
+    }
+    75% {
+        content: "...";
+    }
+    100% {
+        content: "";
+    }
+}
+
+
+/* Preloader */
+#loader-wrapper {
+    @apply visible;
+    opacity: 1;
+}
+
+#loader-wrapper.hidden-wrapper {
+    @apply pointer-events-none;
+    opacity: 0;
+}
+/* END PRELOADER */
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #0261b5;
+}
+
 /* TRANSITION HAMBURGER ICON */
 .navbar-fixed {
-    @apply fixed z-99 bg-black/10;
+    @apply fixed z-50 bg-black/10;
     backdrop-filter: blur(8px);
     box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2);
 }
@@ -29,6 +214,7 @@ img {
     /* backdrop-filter: blur(4px);
     box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.2); */
     position: absolute;
+    z-index: 25;
     top: calc(var(--spacing) * 0);
     left: calc(var(--spacing) * 0);
 }
@@ -160,7 +346,7 @@ img {
 }
 
 /* ANIMATION */
-.stars-container {
+.stars-container, .stars-container-preloader {
     position: absolute;
     inset: 0;
     overflow: hidden;
@@ -199,6 +385,7 @@ img {
         transform: translateY(-100px);
     }
 }
+
 
 /* === ANIMASI SCALE === */
 @keyframes scaleStar {
@@ -461,7 +648,7 @@ img {
 
 /* ### MAKE A WISH SECTION */
 /* Container */
-.wish-container, .logo-container, .maskot-container {
+.wish-container, .logo-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -469,6 +656,15 @@ img {
     padding: 2rem;
     transition: opacity 0.5s, transform 0.5s;
 }
+
+.maskot-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
 .wish-slide, .logo-slide, .maskot-slide {
     display: none;
     align-items: center;
@@ -564,7 +760,7 @@ img {
 }
 
 .slide:hover img {
-    transform: translateZ(10px);
+    transform: translateZ(4px);
     transition: all 0.8s;
 }
 
@@ -590,7 +786,7 @@ img {
 
 .slide:hover .overlay {
     opacity: 1;
-    transform: translateZ(10px);
+    transform: translateZ(4px);
     transition: all 0.8s;
 }
 
@@ -611,6 +807,7 @@ img {
     overflow: hidden;
     transition: 1s;
     opacity: 0;
+    z-index: 51;
 }
 
 .popup.active {
@@ -748,6 +945,248 @@ input[type="checkbox"] {
     padding-bottom: 10px;
     opacity: 1;
     transform: scale(1);
-    
+    margin-top: 8px;
 }
+
+#faq-section .button-with-icon-faq {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FFFFFF;
+    padding: 0 12px;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    color: white;
+    transform: translateY(0px);
+    position: relative;
+    margin-bottom: 1rem;
+    box-shadow:
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0 #FFFFFF,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #2E00D0, #002A68, #000850);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    transition: 150ms all ease-in-out;
+}
+
+#faq-section .button-with-icon-faq .icon-faq {
+    color: #FFFFFF;
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s ease-in-out;
+}
+
+#faq-section .button-with-icon-faq:active {
+    transform: translateY(3px);
+    border: 1px solid #000850;
+    box-shadow:
+    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 #2A049C,
+    0 0 0 2px rgba(19, 0, 101, 0.5),
+    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+#faq-section .button-with-icon-faq .text-faq {
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+#faq-section .button-with-icon-faq:hover .text-faq {
+    transform: translateX(110px);
+}
+#faq-section .button-with-icon-faq:hover .icon-faq {
+    transform: translate(50px);
+}
+
+/*========= CONTACT SECTION =========*/
+.popup-contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 51;
+    padding: 0 24px;
+    @apply font-jakarta;
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.popup-contact .form-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* padding: 30px; */
+    border-radius: 20px;
+    position: relative;
+    background: linear-gradient(180deg, #2E00D0, #002A68, #000850);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.form-contact.slide-out {
+    animation: slideOut 0.5s ease-in forwards;
+}
+
+.close-btn-contact {
+    position: absolute;
+    top: -0.5rem;
+    right: 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.title-contact {
+    justify-content: center;
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    @apply font-orbitron;
+}
+
+.message-contact {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    font-style: italic;
+}
+
+.flex-contact {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.form-contact label {
+    position: relative;
+}
+
+.form-contact label .input-contact {
+    background-color: #ffffff;
+    color: #000000;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+.form-contact label textarea.input-contact {
+    resize: none;
+}
+.form-contact label .input-contact + span {
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form-contact label .input-contact:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+
+.form-contact label .input-contact:focus + span,
+.form-contact label .input-contact:valid + span {
+    color: #2E00D0;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.input-contact {
+    font-size: medium;
+}
+.submit-contact {
+    border: none;
+    outline: none;
+    padding: 10px 30px; /* Menyesuaikan ukuran tombol */
+    border-radius: 10px;
+    transition: 0.3s ease;
+    background-color: #C3AFFF; /* Warna latar tetap ada */
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.submit-contact::before {
+    content: "Submit"; 
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #5F29FF, #2A049C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.submit-contact:hover {
+    background-color: white;
+}
+
+.submit-contact:active {
+    box-shadow: inset 0 16px 2px -15px rgba(0, 0, 0, 0);
+    border: 2px solid #FFFFFF;
+    background: linear-gradient(to bottom, #2E00D0, #002A68, #000850);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-in-out;
+    color: white;
+}
+
 /* ### FAQ SECTION */

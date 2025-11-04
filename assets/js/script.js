@@ -1,3 +1,18 @@
+// Tambahkan fungsi Loader
+window.addEventListener("load", function () {
+    const loaderWrapper = document.getElementById("loader-wrapper");
+
+    if (loaderWrapper) {
+        setTimeout(() => {
+        loaderWrapper.classList.add("hidden-wrapper"); // Mulai transisi opacity 0.5s
+        }, 1500); // Loader tetap tampil minimal 1.5 detik agar animasi terlihat
+
+        setTimeout(() => {
+        loaderWrapper.style.display = "none"; // Sembunyikan setelah transisi selesai
+        }, 2000); // Sesuai dengan durasi transition CSS + jeda tampilan
+    }
+});
+
 // Mencegah Inspect Element dan View Source
 document.addEventListener("keydown", function (event) {
     if (
@@ -136,6 +151,30 @@ updateNavMenuDisplay();
 
 // Jalankan juga saat ukuran layar berubah
 window.addEventListener('resize', updateNavMenuDisplay);
+
+// Menutup Navbar saat klik di luar kotak navbar
+window.addEventListener("click", function (event) {
+    const isMobile = window.innerWidth < 1024;
+
+    // Cek: apakah klik di luar navMenu dan bukan pada hamburger
+    if (
+        isMobile &&
+        !navMenu.contains(event.target) &&
+        !hamburger.contains(event.target) &&
+        !navMenu.classList.contains("hidden") // navbar sedang terbuka
+    ) {
+        // Tambahkan animasi keluar
+        navMenu.style.transform = "translateY(-10px)";
+        navMenu.style.opacity = "0";
+        document.body.classList.remove('nav-open');
+        navMenu.classList.remove('dropdown-appear');
+
+        // Setelah animasi selesai (0.3 detik), sembunyikan menu
+        setTimeout(() => {
+            navMenu.classList.add("hidden");
+        }, 300);
+    }
+});
 // ### NAVBAR
 
 // function createStars() {
@@ -161,7 +200,7 @@ window.addEventListener('resize', updateNavMenuDisplay);
 //     }
 // }
 function createStars() {
-    const container = document.querySelector("#about .stars-container");
+    const container = document.querySelector(".stars-container");
     const numberOfStars = 400;
 
     for (let i = 0; i < numberOfStars; i++) {
@@ -197,6 +236,79 @@ function createStars() {
 }
 
 createStars();
+
+// function createStarsPreloader() {
+//     const container = document.querySelector(".stars-container-preloader");
+//     const numberOfStars = 200;
+
+//     for (let i = 0; i < numberOfStars; i++) {
+//         const star = document.createElement("div");
+//         star.classList.add("star");
+
+//         const size = Math.random() * 2 + 2; // ukuran kecil biar gak numpuk
+//         star.style.width = `${size}px`;
+//         star.style.height = `${size}px`;
+
+//         // posisi acak
+//         const left = Math.random() * 100;
+//         const top = Math.random() * 100;
+//         star.style.left = `${left}%`;
+//         star.style.top = `${top}%`;
+
+//         // durasi gerak acak biar gak serentak
+//         const moveDuration = Math.random() * 20 + 50; // 30–70 detik
+//         const twinkleDuration = Math.random() * 2 + 1; // 1–3 detik
+
+//         star.style.animation = `twinkle ${twinkleDuration}s infinite ease-in-out, moveStars ${moveDuration}s linear infinite`;
+
+//         // tiap kali selesai animasi, reset posisi ke kiri biar langit tetap penuh
+//         star.addEventListener("animationiteration", (e) => {
+//         if (e.animationName === "moveStars") {
+//             star.style.left = `-${Math.random() * 5}vw`; // muncul dari kiri
+//             star.style.top = `${Math.random() * 100}%`; // posisi vertikal acak
+//         }
+//         });
+
+//         container.appendChild(star);
+//     }
+// }
+
+function createStarsPreloader() {
+    const container = document.querySelector(".stars-container-preloader");
+    const numberOfStars = 100;
+
+    // buat dua batch bintang
+    for (let batch = 0; batch < 2; batch++) {
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            const size = Math.random() * 2 + 2;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            star.style.left = `${left}%`;
+            star.style.top = `${top}%`;
+
+            const moveDuration = Math.random() * 20 + 30;
+            const twinkleDuration = Math.random() * 2 + 1;
+
+            // tambahkan delay supaya batch kedua muncul belakangan dikit
+            const delay = batch * (moveDuration / 2);
+
+            star.style.animation = `
+                twinkle ${twinkleDuration}s infinite ease-in-out,
+                moveStars ${moveDuration}s linear infinite ${delay}s
+            `;
+
+            container.appendChild(star);
+        }
+    }
+}
+
+createStarsPreloader();
 
 // ### MAKE A WISH SECTION
 document.addEventListener("DOMContentLoaded", function () {
@@ -492,6 +604,66 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // ### MASKOT SECTION
 
+// ## FAQ SECTION
+// POPUP CONTACT SECTION
+document.addEventListener("DOMContentLoaded", function () {
+    let contactBtn = document.querySelector(".button-with-icon-faq");
+    let popup = document.getElementById("contact");
+    let closeBtn = document.querySelector(".close-btn-contact");
+
+    // Ketika tombol Contact Us diklik
+    contactBtn.addEventListener("click", function () {
+        popup.style.display = "flex"; // Tampilkan popup
+        // popup.classList.add("flex-contact");
+    });
+
+    // // Ketika tombol close (X) diklik
+    // closeBtn.addEventListener("click", function () {
+    //     // popup.style.display = "none"; // Sembunyikan popup
+    //     popup.classList.remove("flex-contact");
+    // });
+
+    // // Menutup popup saat klik di luar kotak popup
+    // window.addEventListener("click", function (event) {
+    //     if (event.target === popup) {
+    //     // popup.style.display = "none";
+    //     popup.classList.remove("flex-contact");
+    //     }
+    // });
+
+    closeBtn.addEventListener("click", function () {
+        let form = popup.querySelector(".form-contact");
+        form.classList.add("slide-out");
+
+        // Setelah animasi selesai, baru sembunyikan popup
+        form.addEventListener(
+            "animationend",
+            function () {
+                // popup.classList.remove("flex-contact");
+                popup.style.display = "none";
+                form.classList.remove("slide-out"); // reset agar bisa dipakai lagi nanti
+            },
+            { once: true }
+        );
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            let form = popup.querySelector(".form-contact");
+            form.classList.add("slide-out");
+            form.addEventListener(
+                "animationend",
+                function () {
+                    // popup.classList.remove("flex-contact");
+                    popup.style.display = "none";
+                    form.classList.remove("slide-out");
+                },
+                { once: true }
+            );
+        }
+    });
+});
+// ## FAQ SECTION
 
 // ## GALLERY SECTION
 // POP UP DOKUMENTASI
@@ -505,14 +677,16 @@ const largeImage = document.querySelector('.large-image');
 const imageIndex = document.querySelector('.index');
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
+const body = document.body;
 
 let index = 0; // will track our current image;
 
-// Popup Image Agate 1
+// Popup Image Diesnat 1
 images.forEach((item, i) => {
     item.addEventListener('click', () => {
         updateImage(i);
         popup.classList.toggle('active');
+        body.style.overflow = 'hidden';
     })
 })
 const updateImage = (i) => {
@@ -526,6 +700,7 @@ const updateImage = (i) => {
 
 closeBtn.addEventListener('click', () => {
     popup.classList.toggle('active');
+    body.style.overflow = '';
 })
 
 leftArrow.addEventListener('click', () => {
@@ -546,3 +721,8 @@ rightArrow.addEventListener('click', () => {
     }
 })
 // ## GALLERY SECTION
+
+// ## FAQ SECTION
+// POPUP CONTACT SECTION
+
+// ## FAQ SECTION

@@ -19,11 +19,56 @@
     <link rel="stylesheet" href="./assets/src/responsive.css">
 </head>
 <body>
+    <!-- START PRELOADER -->
+    <div id="loader-wrapper" class="fixed top-0 bottom-0 w-full h-full px-6 flex items-center justify-center z-9999 transition-opacity visible duration-500" style="background-image:url('/assets/images/bg/bg-about-us.png')">
+        <div class="stars-container-preloader"></div>
+        <div class="absolute top-25 md:top-8 right-0 z-2 max-w-[90px] sm:max-w-[100px] md:max-w-[150px] lg:max-w-[207px] transition-all duration-500">
+            <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
+        </div>
+        <div class="absolute bottom-25 md:bottom-8 left-0 max-w-[90px] sm:max-w-[100px] md:max-w-[150px] lg:max-w-[207px] z-2 rotate-180 transition-all duration-500">
+            <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
+        </div>
+        <div class="absolute translate-x-1/2 top-10">
+            <div class="">
+                <div class="rocket rotate-90">
+                    <div class="window"></div>
+                    <div class="fire"></div>
+                    <div class="gas"></div>
+                    <div class="gas"></div>
+                    <div class="gas"></div>
+                    <div class="gas"></div>
+                    <div class="gas"></div>
+                    <div class="gas"></div>
+                    <div class="gas"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="astro astro-biasa mx-auto max-w-[182px] sm:max-w-[202px] md:max-w-[232px] w-full transition-all duration-500">
+            <img src="assets/images/maskot/astro-biasa.png" alt="astro-biasa" class="glow-blue w-full h-full">
+        </div>
+        <div class="astro astro-melet mx-auto max-w-[182px] sm:max-w-[202px] md:max-w-[232px] w-full transition-all duration-500">
+            <img src="assets/images/maskot/astro-melet.png" alt="astro-melet" class="glow-blue w-full h-full -rotate-15">
+        </div>
+        <div class="flex flex-col translate-y-29 sm:translate-y-32 md:translate-y-35 lg:translate-y-38 justify-center items-center z-10">
+            <div class="text-white font-orbitron text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide mt-0 flex items-center justify-center">
+                <span class="relative inline-block text-center">
+                Loading<span class="dots"></span>
+                </span>
+            </div>
+        </div>
 
+        <!-- <div class="text-white text-xl font-semibold tracking-wide">
+            Loading<span class="dots"></span>
+        </div> -->
+
+    </div>
+    <!-- END PRELOADER -->
+    
     <!-- START NAVBAR -->
-    <nav id="navbar" class="w-full absolute top-0 left-0 px-6 py-4 text-white z-25 transition-all duration-500 sm:px-16 lg:px-18 md:py-5 font-jakarta">
+    <nav id="navbar" class="w-full absolute top-0 left-0 px-6 py-4 text-white transition-all duration-500 sm:px-12 md:px-15 lg:px-18 md:py-5 font-jakarta">
         <div class="flex justify-between items-center selection:bg-white selection:text-selectionBlue">
-            <a href="#home" class="w-[126px] h-10 sm:w-[131px] sm:h-[45px] lg:w-[141px] lg:h-[55px]  transition-all duration-500 flex items-center">
+            <a href="#home" class="w-[126px] h-10 sm:w-[131px] sm:h-[45px] lg:w-[141px] lg:h-[55px] transition-all duration-500 flex items-center">
                 <img src="assets/images/logo/navbar-image.svg" alt="navbar-image" class="w-full h-full" />
             </a>
             <div>
@@ -41,7 +86,7 @@
                     id="nav-menu">
                     <ul class="block lg:flex lg:gap-[70px] font-medium font-orbitron text-center uppercase">
                         <li>
-                            <a href="/" class="w-full py-2 lg:py-0 lg:w-auto text-center group block cursor-pointer transition duration-300">
+                            <a href="#home" class="w-full py-2 lg:py-0 lg:w-auto text-center group block cursor-pointer transition duration-300">
                                 <span class="inline-block py-1 lg:py-0 text-sm text-white
                                             tracking-wide
                                             border-b-2 border-transparent 
@@ -65,7 +110,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#documentation" class="w-full py-2 lg:py-0 lg:w-auto text-center group block cursor-pointer transition duration-300">
+                            <a href="#wish-section" class="w-full py-2 lg:py-0 lg:w-auto text-center group block cursor-pointer transition duration-300">
                                 <span class="inline-block py-1 lg:py-0 text-sm text-white
                                             tracking-wide
                                             border-b-2 border-transparent 
@@ -77,7 +122,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#faq" class="w-full py-2 lg:py-0 lg:w-auto text-center group block cursor-pointer transition duration-300">
+                            <a href="#gallery-section" class="w-full py-2 lg:py-0 lg:w-auto text-center group block cursor-pointer transition duration-300">
                                 <span class="inline-block py-1 lg:py-0 text-sm text-white
                                             tracking-wide
                                             border-b-2 border-transparent 
@@ -96,7 +141,7 @@
     <!-- END NAVBAR -->
 
     <!-- START HERO SECTION -->
-    <section id="hero" class="bg-cover bg-center h-[130vh] transition-all duration-500 px-10 md:px-0" style="background-image:url('/assets/images/bg/bg-hero.png')">
+    <section id="home" class="bg-cover bg-center h-[130vh] transition-all duration-500 px-10 md:px-0" style="background-image:url('/assets/images/bg/bg-hero.png')">
         <div class="font-jakarta h-screen flex justify-center items-center">
             <div>
                 <div class="glow-blue mx-auto max-w-[336px] sm:max-w-[406px] md:max-w-[506px] md:max-h-[120px] w-full transition-all duration-500">
@@ -146,7 +191,7 @@
     <!-- END HERO SECTION -->
 
     <!-- START ABOUT SECTION -->
-    <section id="about" class="relative bg-cover bg-center h-[130vh] px-10 sm:px-16 lg:px-18 flex justify-center items-center transition-all duration-500 overflow-hidden" style="background-image:url('/assets/images/bg/bg-about-us.png')">
+    <section id="about" class="relative bg-cover bg-center h-[130vh] px-10 sm:px-13 md:px-15 lg:px-18 flex justify-center items-center transition-all duration-500 overflow-hidden" style="background-image:url('/assets/images/bg/bg-about-us.png')">
         <div class="absolute top-0 bg-linear-to-b from-[#090030] to-50% w-full h-80 z-11"></div>
         <div class="stars-container"></div>
         <div class="font-jakarta relative z-12">
@@ -162,17 +207,17 @@
     <!-- END ABOUT SECTION -->
 
     <!-- START MAKE A WISH SECTION -->
-    <section id="wish-section" class="relative bg-cover bg-center w-full h-[130vh] px-7 sm:px-16 lg:px-18 flex justify-center items-center transition-all duration-500 z-1" style="background-image:url('/assets/images/bg/bg-make-wish.png')">
-        <div class="absolute top-40 md:top-8 right-0 z-2 max-w-[165px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[307px] transition-all duration-500">
+    <section id="wish-section" class="relative bg-cover bg-center w-full h-[130vh] px-7 sm:px-13 md:px-15 lg:px-18 flex justify-center items-center transition-all duration-500 z-1" style="background-image:url('/assets/images/bg/bg-make-wish.png')">
+        <div class="absolute top-40 md:top-8 right-0 z-2 max-w-[190px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[307px] transition-all duration-500">
             <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
         </div>
         <!-- Konten Slide -->
-        <div class="font-jakarta z-3 w-full">
-            <div class="relative wish-container max-w-[950px] min-h-[500px] w-full flex justify-center mx-auto bg-red-500">
-                <div class="max-w-[42px] md:max-w-12 md:max-h-[61px] absolute top-27 left-4 sm:top-30 sm:left-10 md:top-25 md:left-50">
+        <div class="font-jakarta z-3 w-full selection:bg-selectionBlue">
+            <div class="relative wish-container max-w-[950px] min-h-[500px] w-full flex justify-center mx-auto">
+                <div class="max-w-[42px] md:max-w-12 md:max-h-[61px] absolute top-27 left-4 sm:top-30 sm:left-5 md:top-27 md:left-18 lg:left-45 xl:top-25 xl:left-50">
                     <img src="assets/images/icons/star-long.svg" alt="Star Long" class=" star-long w-full h-full" />
                 </div>
-                <div class="max-w-[38px] md:max-w-[47px] md:max-h-[47px] absolute top-54 right-2 sm:top-50 sm:right-8 md:top-53 md:right-58 z-1">
+                <div class="max-w-[38px] md:max-w-[47px] md:max-h-[47px] absolute top-54 right-2 sm:top-50 sm:right-8 md:right-18 lg:right-45 xl:top-53 xl:right-58 z-1">
                     <img src="assets/images/icons/star-wide.svg" alt="Star Wide" class="star-wide" />
                 </div>
                 <!-- WISH TITLE -->
@@ -185,41 +230,47 @@
                     </p>
                 </div>
                 <!-- Pak Oman Komarudin - Dekan Fasilkom -->
-                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full bg-green-500 transition-all duration-500" id="slide-2">
-                    <div class="glow-blue bg-blue-500 mx-auto max-w-[266px] sm:max-w-[366px] md:max-w-[489px] md:max-h-[120px] w-full transition-all duration-500">
+                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full transition-all duration-500" id="slide-2">
+                    <div class="glow-blue mx-auto max-w-[266px] sm:max-w-[366px] md:max-w-[489px] md:max-h-[120px] w-full transition-all duration-500">
                         <img src="./assets/images/title/dekan-fasilkom-wish.svg" alt="dekan-wish-title" class="glow-blue w-full h-full">
                     </div>
-                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize">
-                    HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus- Pak Oman Komarudin
+                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 capitalize">
+                    HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus - Pak Oman Komarudin
                     </p>
                 </div>
                 <!-- Pak Carudin - Kaprodi Informatika -->
-                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full  bg-green-500" id="slide-3">
-                    <div class="glow-blue bg-blue-500 mx-auto max-w-[206px] sm:max-w-[366px] md:max-w-[369px] md:max-h-[120px] w-full transition-all duration-500">
+                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full  transition-all duration-500" id="slide-3">
+                    <div class="glow-blue mx-auto max-w-[206px] sm:max-w-[296px] md:max-w-[369px] md:max-h-[120px] w-full transition-all duration-500">
                         <img src="./assets/images/title/kaprodi-wish.svg" alt="kaprodi-wish-title" class="glow-blue w-full h-full">
                     </div>
-                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize">
-                    HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus- pak carudin
+                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 capitalize">
+                    HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus - pak carudin
                     </p>
                 </div>
                 <!-- Ketua Pelaksana -->
-                <div class="wish-slide left max-w-[800px]" id="slide-4">
-                    <img src="./assets/images/title/ketua-pelaksana-wish.svg" alt="make-a-wish-title" class="mx-auto glow-blue">
-                    <p class="italic tracking-wide text-sm md:mt-2 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize max-w-[800px]">
+                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full  transition-all duration-500" id="slide-4">
+                    <div class="glow-blue mx-auto max-w-[186px] sm:max-w-[276px] md:max-w-[342px] md:max-h-[120px] w-full transition-all duration-500">
+                        <img src="./assets/images/title/ketua-pelaksana-wish.svg" alt="keplak-wish-title" class="glow-blue w-full h-full">
+                    </div>
+                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 capitalize">
                     HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus.
                     </p>
                 </div>
                 <!-- Kahim HIMTIKA -->
-                <div class="wish-slide left max-w-[800px]" id="slide-5">
-                    <img src="./assets/images/title/kahim-himtika-wish.svg" alt="make-a-wish-title" class="mx-auto glow-blue">
-                    <p class="italic tracking-wide text-sm md:mt-2 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize max-w-[800px]">
+                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full  transition-all duration-500" id="slide-5">
+                    <div class="glow-blue mx-auto max-w-[236px] sm:max-w-[276px] md:max-w-[372px] md:max-h-[120px] w-full transition-all duration-500">
+                        <img src="./assets/images/title/kahim-himtika-wish.svg" alt="ketua-himtika-wish-title" class="glow-blue w-full h-full">
+                    </div>
+                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 capitalize">
                     HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus.
                     </p>
                 </div>
                 <!-- Kahim HIMSIKA -->
-                <div class="wish-slide left max-w-[800px]" id="slide-6">
-                    <img src="./assets/images/title/kahim-himsika-wish.svg" alt="make-a-wish-title" class="mx-auto glow-blue">
-                    <p class="italic tracking-wide text-sm md:mt-2 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize max-w-[800px]">
+                <div class="wish-slide left mx-auto md:max-w-[600px] lg:max-w-[830px] w-full  transition-all duration-500" id="slide-6">
+                    <div class="glow-blue mx-auto max-w-[236px] sm:max-w-[276px] md:max-w-[372px] md:max-h-[120px] w-full transition-all duration-500">
+                        <img src="./assets/images/title/kahim-himsika-wish.svg" alt="ketua-himsika-wish-title" class="glow-blue w-full h-full">
+                    </div>
+                    <p class="italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 capitalize">
                     HIMTIKA, Himpunan Mahasiswa Teknik Informatika, lahir dari semangat mahasiswa pada tahun 2012 dan tumbuh menjadi entitas resmi pada tahun 2017, memimpin dengan inovasi dalam teknologi di dalam kampus.
                     </p>
                 </div>
@@ -243,75 +294,108 @@
     <!-- END MAKE A WISH SECTION -->
 
     <!-- LOGO SECTION -->
-    <section id="logo-section" class="relative bg-cover h-[130vh] px-7 sm:px-16 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-selectionBlue" style="background-image:url('/assets/images/bg/bg-logo.png')">
-        <img src="assets/images/icons/planet.svg" alt="Planet" class="absolute top-8 left-0 planet z-2 rotate-180" />
-        <div class="relative font-jakarta z-3 min-h-[600px] max-w-[1000px] w-full flex justify-center items-center">
-            <img src="assets/images/icons/star-long.svg" alt="Star Long" class="absolute top-30 left-50 star-long" />
-            <img src="assets/images/icons/star-wide.svg" alt="Star Wide" class="absolute top-65 right-63 z-1 star-wide" />
+    <section id="logo-section" class="relative bg-cover h-[130vh] px-7 sm:px-13 md:px-15 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-selectionBlue" style="background-image:url('/assets/images/bg/bg-logo.png')">
+        <div class="absolute top-25 md:top-8 left-0 max-w-[190px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[307px] z-2 rotate-180 transition-all duration-500">
+            <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
+        </div>
+        <div class="relative font-jakarta z-3 min-h-[670px] max-w-[1000px] w-full flex justify-center items-center">
+            <!-- Asset Bintang Kiri -->
+            <div class="max-w-10 md:max-w-11 lg:max-w-12 lg:max-h-[61px] absolute top-52 left-4 sm:left-15 md:left-20 lg:left-45 xl:top-45 xl:left-60">
+                <img src="assets/images/icons/star-long.svg" alt="Star Long" class="star-long w-full h-full" />
+            </div>
+            <!-- Asset Bintang Kanan -->
+            <div class="max-w-[38px] md:max-w-[47px] md:max-h-[47px] absolute top-76 right-2 sm:right-15 md:right-25 lg:right-52 xl:top-73 xl:right-58 z-1">
+                <img src="assets/images/icons/star-wide.svg" alt="Star Wide" class="star-wide w-full h-full" />
+            </div>
+            <!-- Konten Slide -->
             <div class="logo-container max-w-[830px] w-full items-center">
-                <div class="logo-slide logo-active" id="slide-1">
-                    <img src="./assets/images/title/introducing-logo-title.svg" alt="introducing-logo-title" class="mx-auto glow-blue">
-                    <p class="max-w-[590px] italic tracking-wide text-sm md:mt-2 xl:mt-6 text-white text-center transition-all duration-500 capitalize">
+                <div class="logo-slide logo-active mx-auto w-full" id="slide-1">
+                    <div class="glow-blue mx-auto max-w-[246px] sm:max-w-[336px] md:max-w-[376px] md:max-h-[120px] w-full transition-all duration-500">
+                        <img src="./assets/images/title/introducing-logo-title.svg" alt="introducing-logo-title" class="glow-blue w-full h-full">
+                    </div>
+                    <p class="max-w-[590px] italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize glow-blue">
                     Mari kita lihat apa makna dibalik logo dies natalis himtika ke-VIII
                     </p>
                 </div>
-                <!-- Logo Diesnat -->
+                <!-- Slide Logo Diesnat -->
                 <div class="logo-slide min-w-[830px] w-full left" id="slide-2">
-                    <img src="./assets/images/logo/diesnat-logo-slide.svg" alt="diesnat-logo-slide" class="mx-auto logo-diesnat">
+                    <div class="mx-auto max-w-[266px] sm:max-w-[290px] md:max-w-[336px] lg:max-w-[363px] w-full transition-all duration-500">
+                        <img src="./assets/images/logo/diesnat-logo-slide.svg" alt="diesnat-logo-slide" class="w-full h-full logo-diesnat">
+                    </div>
                 </div>
-                <!-- Filosofi Logo -->
+                <!-- Slide Filosofi Logo -->
                 <div class="logo-slide left" id="slide-3">
-                    <h1 class="font-orbitron lg:text-5xl font-bold text-white text-center">FILOSOFI LOGO</h1>
-                    <div class="flex items-center gap-10 mt-7 w-full mx-auto">
-                        <img src="assets/images/logo/elemen-delapan.svg" alt="elemen-delapan" class="w-28">
-                        <div class="text-white">
-                            <h2 class="font-medium">Elemen Delapan</h2>
-                            <p class="italic tracking-wide text-sm mt-2 leading-snug text-justify capitalize">
+                    <h1 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center glow-blue">FILOSOFI LOGO</h1>
+                    <div class="flex items-center gap-9 mt-7 w-full mx-auto">
+                        <div class="glow-blue mx-auto max-w-[105px] w-full hidden md:block transition-all duration-500">
+                            <img src="./assets/images/logo/elemen-delapan.svg" alt="elemen-delapan" class="glow-blue w-full h-full">
+                        </div>
+                        <div class="w-full flex flex-col gap-5 md:gap-0 items-center text-white">
+                            <h2 class="font-semibold text-center md:text-left text-base md:text-lg border-b border-selectionBlue md:border-0 w-fit mx-auto md:w-full">Elemen Delapan</h2>
+                            <div class="glow-blue mx-auto max-w-[65px] sm:max-w-[85px] md:max-w-[105px] w-full block md:hidden transition-all duration-500">
+                                <img src="./assets/images/logo/elemen-delapan.svg" alt="elemen-delapan" class="glow-blue w-full h-full">
+                            </div>
+                            <p class="italic tracking-wide text-xs md:text-sm md:mt-2 leading-snug text-justify capitalize">
                             Elemen angka 8 dalam logo tidak hanya menunjukkan usia HIMTIKA yang ke-8, tetapi juga menyiratkan simbol tak hingga (infinity). mencerminkan semangat HIMTIKA yang berkelanjutan, kebersamaan yang tak terputus, serta perjuangan yang konsisten dari generasi ke generasi.
                             </p>
                         </div>
                     </div>
                 </div>
-                <!-- Filosofi Logo -->
+                <!-- Slide Filosofi Logo -->
                 <div class="logo-slide left" id="slide-4">
-                    <h1 class="font-orbitron lg:text-5xl font-bold text-white text-center">FILOSOFI LOGO</h1>
-                    <div class="flex items-center gap-10 mt-7 max-w-[700px] w-full mx-auto">
-                        <img src="assets/images/logo/elemen-bintang.svg" alt="elemen-delapan" class="w-28">
-                        <div class="text-white">
-                            <h2 class="font-medium ">Elemen Bintang</h2>
-                            <p class="italic tracking-wide text-sm mt-3 leading-snug text-justify capitalize">
+                    <h1 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center glow-blue">FILOSOFI LOGO</h1>
+                    <div class="flex items-center gap-9 mt-7 w-full mx-auto">
+                        <div class="glow-blue mx-auto max-w-[105px] w-full hidden md:block transition-all duration-500">
+                            <img src="./assets/images/logo/elemen-bintang.svg" alt="elemen-bintang" class="glow-blue w-full h-full">
+                        </div>
+                        <div class="w-full flex flex-col gap-5 md:gap-0 items-center text-white">
+                            <h2 class="font-semibold text-center md:text-left text-base md:text-lg border-b border-selectionBlue md:border-0 w-fit mx-auto md:w-full">Elemen Bintang</h2>
+                            <div class="glow-blue mx-auto max-w-[95px] sm:max-w-[110px] md:max-w-[120px] lg:max-w-[105px] w-full block md:hidden transition-all duration-500">
+                                <img src="./assets/images/logo/elemen-bintang.svg" alt="elemen-bintang" class="glow-blue w-full h-full">
+                            </div>
+                            <p class="italic tracking-wide text-xs md:text-sm md:mt-2 leading-snug text-justify capitalize">
                             Bintang yang terintegrasi di tengah angka 8 menjadi simbol arah, harapan, dan pencapaian. Ia merepresentasikan bahwa HIMTIKA memiliki nilai dan tujuan yang jelas sebagai kompas dalam setiap langkah organisasinya. 
                             </p>
                         </div>
                     </div>
                 </div>
-                <!-- Filosofi Warna -->
+                <!-- Slide Filosofi Warna -->
                 <div class="logo-slide left" id="slide-5">
-                    <img src="./assets/images/title/filosofi-warna-title.svg" alt="introducing-logo-title" class="mx-auto glow-blue">
-                    <div class="flex items-center justify-center gap-5 mt-9 max-w-[700px] mx-auto">
-                        <div class="glow-blue w-64">
-                            <img src="assets/images/icons/palette-logo-diesnat.svg" alt="pallete-logo-diesnat">
+                    <div class="glow-blue mx-auto max-w-[256px] sm:max-w-[336px] md:max-w-[466px] w-full transition-all duration-500">
+                        <img src="assets/images/title/filosofi-warna-title.svg" alt="filosofi-warna-title" class="glow-blue w-full h-full">
+                    </div>
+                    <div class="flex flex-col lg:flex-row items-center justify-center gap-5 mt-9 md:mt-11 lg:mt-9 max-w-[730px] mx-auto">
+                        <div class="glow-blue mx-auto max-w-[150px] sm:max-w-[170px] md:max-w-[200px] lg:max-w-[210px] w-full transition-all duration-500">
+                            <img src="assets/images/icons/palette-logo-diesnat.svg" alt="pallete-logo-diesnat" class="glow-blue w-full h-full rotate-90 lg:rotate-0">
                         </div>
-                        <div class="text-white w-full flex flex-col gap-4">
+                        <div class="flex justify-between gap-15 -mt-15 mb-8 lg:mt-0 lg:mb-0 lg:hidden">
+                            <div class="max-w-[130px] sm:max-w-[150px] -translate-x-4 sm:-translate-x-6 md:-translate-x-12 glow-blue">
+                                <img src="assets/images/icons/ice-blue-palette.svg" alt="ice-blue-palette" class="w-full h-full glow-blue rotate-90">
+                            </div>
+                            <div class="max-w-[130px] sm:max-w-[150px] translate-x-6 sm:translate-x-8 md:translate-x-15 glow-blue">
+                                <img src="assets/images/icons/bright-azure-palette.svg" alt="bright-azure-palette" class="w-full h-full glow-blue rotate-90">
+                            </div>
+                        </div>
+                        <div class="text-white w-full flex flex-row-reverse lg:flex-col gap-6 lg:gap-4">
                             <div class="flex items-end gap-3 w-fit">
-                                <div class="max-w-[150px] glow-blue">
+                                <div class="max-w-[150px] glow-blue hidden lg:block">
                                     <img src="assets/images/icons/bright-azure-palette.svg" alt="bright-azure-palette" class="w-full glow-blue">
                                 </div>
                                 <div class="italic max-w-[400px] w-full">
-                                    <h2 class="font-medium text-sm glow-blue">Bright Azure</h2>
-                                    <p class="tracking-wide text-xs mt-1 leading-snug text-justify capitalize glow-blue">
+                                    <h2 class="font-medium text-sm glow-blue text-right lg:text-left">Bright Azure</h2>
+                                    <p class="tracking-wide text-[10px] md:text-xs mt-1 leading-snug text-right lg:text-justify capitalize glow-blue">
                                     Menghadirkan dinamisme dan energi yang kuat, melambangkan semangat modernitas dan progresivitas.
                                     </p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3 w-fit">
-                                <div class="max-w-[150px] glow-blue">
+                                <div class="max-w-[150px] glow-blue hidden lg:block">
                                     <img src="assets/images/icons/ice-blue-palette.svg" alt="ice-blue-palette" class="w-full glow-blue">
                                 </div>
                                 <div class="italic max-w-[400px] w-full">
-                                    <h2 class="font-medium text-sm glow-blue">Ice Blue</h2>
-                                    <p class="tracking-wide text-xs mt-1 leading-snug text-justify capitalize glow-blue">
-                                    Memancarkan harapan,  semangat, serta merefleksikan optimisme  untuk  masa depan yang cerah.
+                                    <h2 class="font-medium text-sm glow-blue text-left">Ice Blue</h2>
+                                    <p class="tracking-wide text-[10px] md:text-xs mt-1 leading-snug text-left lg:text-justify capitalize glow-blue">
+                                    Memancarkan harapan, semangat, serta merefleksikan optimisme untuk masa depan yang cerah.
                                     </p>
                                 </div>
                             </div>
@@ -321,7 +405,7 @@
             </div>
         </div>
         <!-- tombol navigasi -->
-        <div class="absolute top-1/2 right-14 flex flex-col items-center gap-2.5 logo-nav z-4">
+        <div class="absolute top-1/2 right-14 flex flex-col items-center gap-2.5 logo-nav z-6">
             <button id="logo-prev"><i class="fa-solid fa-arrow-up"></i></button>
             <div class="logo-dots">
                 <span class="logo-dot logo-active" data-slide="0"></span>
@@ -338,84 +422,101 @@
     <!-- LOGO SECTION -->
 
     <!-- MASKOT SECTION -->
-    <section id="maskot-section" class="relative bg-cover h-[130vh] px-7 sm:px-16 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-selectionBlue text-white" style="background-image:url('/assets/images/bg/bg-maskot.png')">
-        <img src="assets/images/icons/planet.svg" alt="Planet" class="absolute top-8 right-0 planet z-6" />
+    <section id="maskot-section" class="relative bg-cover h-[130vh] px-7 sm:px-13 md:px-15 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-selectionBlue text-white" style="background-image:url('/assets/images/bg/bg-maskot.png')">
+        <div class="absolute top-40 md:top-8 right-0 max-w-[190px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[307px] transition-all duration-500">
+            <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
+        </div>
         <div class="relative font-jakarta z-3 min-h-[600px] max-w-[1000px] w-full flex justify-center items-center">
-            <img src="assets/images/icons/star-long.svg" alt="Star Long" class="absolute top-20 left-50 star-long" />
-            <img src="assets/images/icons/star-wide.svg" alt="Star Wide" class="absolute top-45 right-63 z-1 star-wide" />
+            <!-- Asset Bintang Kiri -->
+            <div class="max-w-10 md:max-w-11 lg:max-w-12 lg:max-h-[61px] absolute top-50 left-2 sm:left-15 md:left-20 lg:left-45 xl:top-45 xl:left-60">
+                <img src="assets/images/icons/star-long.svg" alt="Star Long" class="star-long w-full h-full" />
+            </div>
+            <!-- Asset Bintang Kanan -->
+            <div class="max-w-[38px] md:max-w-[47px] md:max-h-[47px] absolute top-70 right-5 sm:right-15 md:right-25 lg:right-52 xl:top-73 xl:right-58 z-1">
+                <img src="assets/images/icons/star-wide.svg" alt="Star Wide" class="star-wide w-full h-full" />
+            </div>
+            <!-- Konten Slide -->
             <div class="maskot-container w-full items-center">
+                <!-- Slide Utama -->
                 <div class="maskot-slide maskot-active" id="slide-1">
-                    <img src="./assets/images/title/maskot-title.svg" alt="maskot-title" class="mx-auto glow-blue">
-                    <p class="max-w-[590px] italic tracking-wide text-sm md:mt-2 xl:mt-6  text-center transition-all duration-500 capitalize">
+                    <div class="glow-blue mx-auto max-w-[266px] sm:max-w-[336px] md:max-w-[397px] md:max-h-[120px] w-full transition-all duration-500">
+                        <img src="./assets/images/title/maskot-title.svg" alt="maskot-title" class="glow-blue w-full h-full">
+                    </div>
+                    <p class="max-w-[590px] italic tracking-wide text-xs sm:text-sm mt-5 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize glow-blue">
                     Let’s guess, who’s  hiding behind the stars.
                     </p>
                 </div>
                 <!-- Astro 1 -->
-                <div class="maskot-slide min-w-[830px] w-full left" id="slide-2">
-                    <img src="./assets/images/maskot/Astro-1.svg" alt="astro-1" class="mx-auto logo-diesnat">
+                <div class="maskot-slide w-full left" id="slide-2">
+                    <div class="mx-auto max-w-[226px] sm:max-w-[250px] md:max-w-[276px] lg:max-w-[296px] xl:max-w-[314px] w-full transition-all duration-500">
+                        <img src="./assets/images/maskot/Astro-1.svg" alt="astro-card-1" class="w-full h-full logo-diesnat">
+                    </div>
                 </div>
                 <!-- Astro 2 -->
                 <div class="maskot-slide min-w-[830px] w-full left" id="slide-3">
-                    <img src="./assets/images/maskot/Astro-2.svg" alt="astro-2" class="mx-auto logo-diesnat">
+                    <div class="mx-auto max-w-[226px] sm:max-w-[250px] md:max-w-[276px] lg:max-w-[296px] xl:max-w-[314px] w-full transition-all duration-500">
+                        <img src="./assets/images/maskot/Astro-2.svg" alt="astro-card-2" class="w-full h-full logo-diesnat">
+                    </div>
                 </div>
                 <!-- Secret Stars -->
                 <div class="maskot-slide max-w-[880px] mx-auto w-full left" id="slide-4">
-                    <h1 class="font-orbitron lg:text-5xl font-bold  text-center leading-15">THE SECRET BEHIND THE STARS IS NO LONGER HIDDEN.</h1>
-                    <p class="italic tracking-wide text-sm mt-3 leading-snug text-center text-white capitalize">
+                    <h1 class="font-orbitron text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold md:font-bold font-stretch-ultra-expanded text-center leading-snug transition-all duration-500 glow-blue">THE SECRET BEHIND THE STARS IS NO LONGER HIDDEN.</h1>
+                    <p class="italic tracking-wide text-[10px] sm:text-xs md:text-sm mt-3 capitalize">
                     It’s astroooo, he’s a arctic fox from cyro quadrant. 
                     <span class="block">Let’s dive into the essence of Astro!!</span>
                     </p>
                 </div>
                 <!-- Makna Maskot -->
                 <div class="maskot-slide left" id="slide-5">
-                    <img src="./assets/images/title/makna-maskot-title.svg" alt="makna-maskot-title" class="mx-auto glow-blue">
-                    <div class="flex flex-col items-center justify-center -gap-10 mt-9 max-w-[750px] w-full mx-auto italic">
+                    <div class="glow-blue mx-auto max-w-[136px] sm:max-w-[156px] md:max-w-[206] lg:max-w-[233px] xl:max-w-[263px] w-full transition-all duration-500">
+                        <img src="./assets/images/title/makna-maskot-title.svg" alt="makna-maskot-title" class="glow-blue w-full h-full">
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-2 md:gap-5 lg:-gap-4 xl:-gap-9 mt-5 sm:mt-7 md:mt-9 max-w-[750px] w-full mx-auto italic">
                         <!-- Emblem Bintang -->
-                        <div class="flex items-center gap-9 w-full">
-                            <div class=" object-contain w-32 h-30 flex items-center justify-center">
+                        <div class="flex items-center gap-5 sm:gap-7 lg:gap-9 w-full">
+                            <div class="object-contain w-20 h-18 md:w-26 lg:w-28 xl:w-32 lg:h-20 xl:h-22 flex items-center justify-center">
                                 <img src="./assets/images/maskot/emblem-bintang-astro.svg" alt="emblem-bintang-astro" class="max-w-full max-h-full glow-blue-2">
                             </div>
-                            <div class="flex flex-col gap-2 w-full glow-blue">
-                                <h2 class="font-medium">Emblem Bintang</h2>
-                                <p class="tracking-wide font-light text-sm leading-snug text-justify capitalize">
+                            <div class="flex flex-col gap-0.5 lg:gap-1 xl:gap-2 w-full glow-blue">
+                                <h2 class="font-medium text-left text-xs sm:text-sm md:text-base">Emblem Bintang</h2>
+                                <p class="tracking-wide font-light text-[10px] sm:text-xs md:text-sm leading-snug text-justify capitalize">
                                     Melambangkan arah, visi, dan harapan yang bersinar — menjadi pusat energi positif yang menuntun ke masa depan gemilang.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Sabuk -->
-                        <div class="flex group items-center gap-9 w-full">
-                            <div class=" object-contain w-32 h-30 flex items-center justify-center ">
-                                <img src="./assets/images/maskot/sabuk-astro.svg" alt="sabuk-astro" class="max-w-full max-h-full group-hover:cursor-progress glow-blue-2">
+                        <div class="flex items-center gap-5 sm:gap-7 lg:gap-9 w-full">
+                            <div class="object-contain w-20 h-18 md:w-26 lg:w-28 xl:w-32 lg:h-20 xl:h-22 flex items-center justify-center">
+                                <img src="./assets/images/maskot/sabuk-astro.svg" alt="sabuk-astro" class="max-w-full max-h-full glow-blue-2">
                             </div>
-                            <div class="flex flex-col gap-2 w-full glow-blue">
-                                <h2 class="font-medium">Sabuk dengan Simbol Infinity</h2>
-                                <p class="tracking-wide font-light text-sm leading-snug text-justify capitalize">Mewakili kesinambungan, perjuangan lintas generasi, dan cita-cita besar yang terus berlanjut tanpa batas.</p>
+                            <div class="flex flex-col gap-0.5 lg:gap-1 xl:gap-2 w-full glow-blue">
+                                <h2 class="font-medium text-left text-xs sm:text-sm md:text-base">Sabuk dengan Simbol Infinity</h2>
+                                <p class="tracking-wide font-light text-[10px] sm:text-xs md:text-sm leading-snug text-justify capitalize">Mewakili kesinambungan, perjuangan lintas generasi, dan cita-cita besar yang terus berlanjut tanpa batas.</p>
                             </div>
                         </div>
 
                         <!-- Antena -->
-                        <div class="flex items-center gap-9 w-full">
-                            <div class="object-contain w-32 h-30 flex items-center justify-center glow-blue-2">
-                                <img src="./assets/images/maskot/antena-astro.svg" alt="antena-astro" class="max-w-full max-h-full ">
+                        <div class="flex items-center gap-5 sm:gap-7 lg:gap-9 w-full">
+                            <div class="object-contain w-20 h-18 md:w-26 lg:w-28 xl:w-32 lg:h-20 xl:h-22 flex items-center justify-center">
+                                <img src="./assets/images/maskot/antena-astro.svg" alt="antena-astro" class="max-w-full max-h-full glow-blue-2">
                             </div>
-                            <div class="flex flex-col gap-2 w-full glow-blue">
-                                <h2 class="font-medium">Antena di Helm</h2>
-                                <p class="tracking-wide font-light text-sm leading-snug text-justify capitalize">Simbol keterbukaan terhadap komunikasi, kolaborasi, dan konektivitas di era digital — memperkuat hubungan antar individu dan ide.</p>
+                            <div class="flex flex-col gap-0.5 lg:gap-1 xl:gap-2 w-full glow-blue">
+                                <h2 class="font-medium text-left text-xs sm:text-sm md:text-base">Antena di Helm</h2>
+                                <p class="tracking-wide font-light text-[10px] sm:text-xs md:text-sm leading-snug text-justify capitalize">Simbol keterbukaan terhadap komunikasi, kolaborasi, dan konektivitas di era digital — memperkuat hubungan antar individu dan ide.</p>
                             </div>
                         </div>
 
                         <!-- Arctic Fox -->
-                        <div class="flex items-center gap-9 w-full">
-                            <div class="object-contain w-32 h-30 flex items-center justify-center glow-blue-2">
-                                <img src="./assets/images/maskot/arctic-fox-astro.svg" alt="arctic-fox-astro" class="max-w-full max-h-full ">
+                        <div class="flex items-center gap-5 sm:gap-7 lg:gap-9 w-full">
+                            <div class="object-contain w-20 h-18 md:w-26 lg:w-28 xl:w-32 lg:h-20 xl:h-22 flex items-center justify-center">
+                                <img src="./assets/images/maskot/arctic-fox-astro.svg" alt="arctic-fox-astro" class="max-w-full max-h-full glow-blue-2">
                             </div>
-                            <div class="flex flex-col gap-2 w-full glow-blue">
-                                <h2 class="font-medium">Arctic Fox</h2>
-                                <p class="tracking-wide font-light text-sm leading-snug text-justify capitalize">Arctic Fox melambangkan kecerdasan, kelincahan, dan kemampuan beradaptasi — karakteristik penting dalam menghadapi era digital yang dinamis.</p>
+                            <div class="flex flex-col gap-0.5 lg:gap-1 xl:gap-2 w-full glow-blue">
+                                <h2 class="font-medium text-left text-xs sm:text-sm md:text-base">Arctic Fox</h2>
+                                <p class="tracking-wide font-light text-[10px] sm:text-xs md:text-sm leading-snug text-justify capitalize">Arctic Fox melambangkan kecerdasan, kelincahan, dan kemampuan beradaptasi — karakteristik penting dalam menghadapi era digital yang dinamis.</p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -437,103 +538,113 @@
     <!-- MASKOT SECTION -->
     
     <!-- GALLERY SECTION -->
-    <section id="gallery-section" class="relative bg-cover h-[130vh] px-7 sm:px-16 lg:px-18 flex justify-center items-center transition-all duration-500 selection:bg-selectionBlue" style="background-image:url('/assets/images/bg/bg-logo.png')">
-        <img src="assets/images/icons/planet.svg" alt="Planet" class="absolute top-8 left-0 planet z-1 rotate-180" />
+    <section id="gallery-section" class="relative bg-cover h-[130vh] px-7 sm:px-13 md:px-15 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-selectionBlue" style="background-image:url('/assets/images/bg/bg-logo.png')">
+        <div class="absolute top-15 md:top-8 left-0 max-w-[190px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[307px] z-1 rotate-180 transition-all duration-500">
+            <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
+        </div>
         <div class="font-jakarta z-1">
-            <img src="./assets/images/title/gallery-title.svg" alt="gallery-title" class="mx-auto glow-blue">
-            <p class="max-w-[700px] italic tracking-wide text-xs md:mt-2 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize glow-blue mx-auto">
+            <div class="mx-auto max-w-[226px] sm:max-w-[276px] md:max-w-[316px] lg:max-w-[356px] md:max-h-[120px] w-full transition-all duration-500">
+                <img src="./assets/images/title/gallery-title.svg" alt="gallery-title" class="glow-blue w-full h-full">
+            </div>
+            <p class="max-w-[700px] italic tracking-wide text-[10px] sm:text-xs mt-4 md:mt-2 xl:mt-6 text-white text-center transition-all duration-500 selection:bg-selectionBlue capitalize glow-blue mx-auto">
             Each image tells a story — of harmony built, collaboration nurtured, and growth celebrated.<span class="block"> This gallery is more than just a visual archive — it's a reflection of HIMTIKA's journey in creating a meaningful and solid future.</span>
             </p>
 
             <!-- BENTO GRID -->
-            <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-3 mt-8 max-w-3xl max-h-[346px] mx-auto">
+            <div class="grid w-full h-full grid-cols-3 grid-rows-3 gap-4 sm:gap-5 mt-8 max-w-3xl max-h-[266px] lg:max-h-[346px] mx-auto">
                 <div class="slide relative col-span-1 row-span-2 flex items-center justify-center rounded-[10px]">
-                    <div class="overlay font-jakarta italic text-sm">
+                    <div class="overlay font-jakarta italic text-center text-[10px] sm:text-xs md:text-sm">
                         Klik untuk selengkapnya
                     </div>
                     <img src="assets/images/logo/logo-diesnat-gallery.png" alt="dokumentasi" class="image" />
                 </div>
 
                 <div class="slide relative col-span-1 row-span-1 flex items-center justify-center rounded-[10px]">
-                    <div class="overlay font-jakarta italic text-sm">
+                    <div class="overlay font-jakarta italic text-center text-[10px] sm:text-xs md:text-sm">
                         Klik untuk selengkapnya
                     </div>
                     <img src="assets/images/logo/logo-diesnat-gallery.png" alt="dokumentasi" class="image" />
                 </div>
 
                 <div class="slide relative col-span-1 row-span-2 flex items-center justify-center rounded-[10px]">
-                    <div class="overlay font-jakarta italic text-sm">
+                    <div class="overlay font-jakarta italic text-center text-[10px] sm:text-xs md:text-sm">
                         Klik untuk selengkapnya
                     </div>
                     <img src="assets/images/logo/logo-diesnat-gallery.png" alt="dokumentasi" class="image" />
                 </div>
 
                 <div class="slide relative col-span-1 row-span-2 flex items-center justify-center rounded-[10px]">
-                    <div class="overlay font-jakarta italic text-sm">
+                    <div class="overlay font-jakarta italic text-center text-[10px] sm:text-xs md:text-sm">
                         Klik untuk selengkapnya
                     </div>
                     <img src="assets/images/logo/logo-diesnat-gallery.png" alt="dokumentasi" class="image" />
                 </div>
 
                 <div class="slide relative col-span-1 row-span-1 flex items-center justify-center rounded-[10px]">
-                    <div class="overlay font-jakarta italic text-sm">
+                    <div class="overlay font-jakarta italic text-center text-[10px] sm:text-xs md:text-sm">
                         Klik untuk selengkapnya
                     </div>
                     <img src="assets/images/logo/logo-diesnat-gallery.png" alt="dokumentasi" class="image" />
                 </div>
 
                 <div class="slide relative col-span-1 row-span-1 flex items-center justify-center rounded-[10px]">
-                    <div class="overlay font-jakarta italic text-sm">
+                    <div class="overlay font-jakarta italic text-center text-[10px] sm:text-xs md:text-sm">
                         Klik untuk selengkapnya
                     </div>
                     <img src="assets/images/logo/logo-diesnat-gallery.png" alt="dokumentasi" class="image" />
                 </div>
             </div>
             <!-- BENTO GRID -->
-
-            <!-- popup -->
-            <div class="popup z-999">
-                <span class="close-btn">
-                    <svg viewBox="0 0 56.326 56.326" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="Path_14" data-name="Path 14" d="M477.613,422.087l25.6-25.6a1.5,1.5,0,0,0-2.122-2.121l-25.6,25.6-25.6-25.6a1.5,1.5,0,1,0-2.121,2.121l25.6,25.6-25.6,25.6a1.5,1.5,0,0,0,2.121,2.122l25.6-25.6,25.6,25.6a1.5,1.5,0,0,0,2.122-2.122Z" transform="translate(-447.328 -393.924)" fill="#000000"></path> </g></svg>
-                </span>
-                <!-- arrows -->
-                <!-- <button class="arrow-btn left-arrow"><img src="assets/images/icons/arrow.png" alt="Right Arrow"></button>
-                <button class="arrow-btn right-arrow"><img src="assets/images/icons/arrow.png" alt="Left Arrow"></button> -->
-                <!-- image -->
-                <img src="assets/images/documentation/agate-1.webp" class="large-image" alt="Agate Documentation">
-                <!-- image-index -->
-                <h1 class="index">01</h1>
-            </div>
         </div>
         <div class="absolute bottom-0 bg-linear-to-t from-[#061644] to-50% w-full h-80"></div>
     </section>
     <!-- GALLERY SECTION -->
 
+    <!-- POPUP GALLERY -->
+    <div class="popup">
+        <span class="close-btn">
+            <svg viewBox="0 0 56.326 56.326" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="Path_14" data-name="Path 14" d="M477.613,422.087l25.6-25.6a1.5,1.5,0,0,0-2.122-2.121l-25.6,25.6-25.6-25.6a1.5,1.5,0,1,0-2.121,2.121l25.6,25.6-25.6,25.6a1.5,1.5,0,0,0,2.121,2.122l25.6-25.6,25.6,25.6a1.5,1.5,0,0,0,2.122-2.122Z" transform="translate(-447.328 -393.924)" fill="#000000"></path> </g></svg>
+        </span>
+        <!-- arrows -->
+        <!-- <button class="arrow-btn left-arrow"><img src="assets/images/icons/arrow.png" alt="Right Arrow"></button>
+        <button class="arrow-btn right-arrow"><img src="assets/images/icons/arrow.png" alt="Left Arrow"></button> -->
+        <!-- image -->
+        <img src="assets/images/logo/logo-diesnat-gallery.png" class="large-image" alt="Diesnatalis Documentation">
+        <!-- image-index -->
+        <h1 class="index">01</h1>
+    </div>
+
     <!-- FAQ SECTION -->
-    <section id="faq-section" class="relative bg-cover h-[130vh] px-7 sm:px-16 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-blueGradientButtonMiddle selection:text-white text-white" style="background-image:url('/assets/images/bg/bg-maskot.png')">
-        <img src="assets/images/icons/planet.svg" alt="Planet" class="absolute top-8 right-0 planet z-6" />
+    <section id="faq-section" class="relative bg-cover h-[130vh] px-7 sm:px-13 md:px-15 lg:px-18 flex justify-center items-center transition-all duration-500 z-1 selection:bg-blueGradientButtonMiddle selection:text-white text-white" style="background-image:url('/assets/images/bg/bg-maskot.png')">
+        <div class="absolute top-40 md:top-8 right-0 max-w-[190px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[307px] transition-all duration-500">
+            <img src="assets/images/icons/planet.svg" alt="Planet" class="planet w-full h-full" />
+        </div>
         <div class="font-jakarta w-full">
-            <img src="./assets/images/title/faq-title.svg" alt="faq-title" class="mx-auto glow-blue">
-            <p class="max-w-[700px] italic tracking-wide text-sm mt-8 text-center transition-all duration-500 selection:bg-selectionBlue capitalize glow-blue mx-auto">
+            <div class="glow-blue mx-auto max-w-[326px] sm:max-w-[456px] md:max-w-[556px] xl:max-w-[775px] w-full transition-all duration-500">
+                <img src="./assets/images/title/faq-title.svg" alt="faq-title" class="glow-blue w-full h-full">
+            </div>
+            <p class="max-w-[230px] sm:max-w-[400px] lg:max-w-[700px] italic tracking-wide text-[10px] sm:text-xs md:text-sm mt-4 sm:mt-7 xl:mt-8 text-center transition-all duration-500 selection:bg-selectionBlue capitalize glow-blue mx-auto">
             Jika anda memiliki pertanyaan lain, kontak kami dengan klik tombol di bawah ini.
             </p>
-            <button class="button-with-icon-faq">
-                <svg
-                    class="icon-faq"
-                    id="Phone"
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                    class="color000000 svgShape"
-                        fill="currentColor"
-                        d="M34.6 28.9c-2.2-.6-4.4-.2-6.3 1.2l-2.2 1.6c-3.5-1.8-6.4-4.7-8.2-8.2l1.6-2.2c1.4-1.9 1.8-4.2 1.2-6.3L18.8 9c-.5-1.9-2.2-3.3-4.2-3.3h-3C9.2 5.7 6 8.8 6 12.8c0 4.4 2.1 9.5 6 14.4 3.9 4.9 8.9 8.1 14.4 10.2 4 1.4 7.1-.2 7.1-3.6v-3c0-2-1.4-3.7-3.3-4.2z"
-                    ></path>
-                </svg>
-                <span class="text-faq">Contact Us</span>
-            </button>
+            <div class="flex justify-center mt-5 md:mt-4">
+                <button class="button-with-icon-faq">
+                    <svg
+                        class="icon-faq"
+                        id="Phone"
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                        class="color000000 svgShape"
+                            fill="currentColor"
+                            d="M34.6 28.9c-2.2-.6-4.4-.2-6.3 1.2l-2.2 1.6c-3.5-1.8-6.4-4.7-8.2-8.2l1.6-2.2c1.4-1.9 1.8-4.2 1.2-6.3L18.8 9c-.5-1.9-2.2-3.3-4.2-3.3h-3C9.2 5.7 6 8.8 6 12.8c0 4.4 2.1 9.5 6 14.4 3.9 4.9 8.9 8.1 14.4 10.2 4 1.4 7.1-.2 7.1-3.6v-3c0-2-1.4-3.7-3.3-4.2z"
+                        ></path>
+                    </svg>
+                    <span class="text-faq">Contact Us</span>
+                </button>
+            </div>
 
-            <div class="w-full sm:w-[50%] mx-auto mt-10 ">
+            <div class="w-full md:w-[90%] lg:w-[80%] xl:w-[50%] mx-auto mt-8">
                 <ul class="container-accordion right-column flex flex-col gap-3 w-full relative z-2 font-jakarta italic">
                     <li class="list-none w-auto p-2 lg:p-2.5 bg-white rounded-3xl text-sm capitalize">
                         <input
@@ -542,13 +653,13 @@
                             id="fourth"
                             class="accordion-toggle"
                         />
-                        <label id="faq" for="fourth" class="flex items-center font-medium justify-between cursor-pointer py-1 px-4 text-black"
+                        <label id="faq" for="fourth" class="flex items-center font-medium justify-between cursor-pointer py-1 px-4 text-black text-xs sm:text-sm lg:text-base"
                             >Apa itu Dies Natalis?<i
                             class="fa-solid fa-circle-arrow-down bg-linear-180/oklch from-blueGradientButtonStart via-blueGradientButtonMiddle to-blueGradientButtonEnd"
                             ></i
                         ></label>
                         <div class="content border border-t-2 border-t-blueRadialInner">
-                            <p class="text-black text-justify font-medium">
+                            <p class="text-black text-justify font-medium text-xs sm:text-sm lg:text-base">
                             Dies Natalis HIMTIKA merupakan rangkaian acara yang diselenggarakan dalam rangka memperingati hari lahirnya HIMTIKA, yang berdiri pada tanggal 16 Oktober 2017. Acara ini menjadi momen penting sebagai peringatan hari jadi HIMTIKA yang ke-8, sekaligus menjadi sarana untuk mempererat tali silaturahmi antar pengurus dan anggota.
                             </p>
                         </div>
@@ -556,18 +667,86 @@
                 </ul>
             </div>
         </div>
-        
     </section>
     <!-- FAQ SECTION -->
 
+    <!-- POPUP CONTACT SECTION -->
+    <section class="popup-contact" id="contact">
+        <!-- <div></div> -->
+        <form
+            class="form-contact font-jakarta p-6 sm:p-8 md:p-9"
+            method="post"
+            id="contact-form"
+            name="contact-form"
+            action="https://script.google.com/macros/s/AKfycbx-hTLSdkBCz-XIIB8zalvLSt0qspZsSTxf61jm2iBAGQhKNylA8RldW5WwMNZfQp42/exec"
+        >
+                <div class="w-full mx-auto max-w-[183px] md:max-w-[260px]">
+                    <img src="./assets/images/title/contact-title.svg" alt="contact-title" class="mx-auto glow-blue w-full h-full">
+                </div>
+                <span class="close-btn-contact" onclick="closePopup()">&times;</span>
+            <p class="message-contact selection:bg-white selection:text-blueGradientButtonEnd">we’re always open to any suggestions you may have</p>
+            <div class="flex-contact">
+                <label>
+                    <input
+                    name="email"
+                    required=""
+                    placeholder=""
+                    type="email"
+                    class="input-contact"
+                    />
+                    <span class="selection:bg-blueGradientButtonMiddle selection:text-white">Email</span>
+                </label>
+
+                <label>
+                    <input
+                    name="phone"
+                    required=""
+                    placeholder=""
+                    type="tel"
+                    class="input-contact"
+                    pattern="[0-9]+"
+                    inputmode="numeric"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    title="Hanya boleh angka"
+                    />
+                    <span class="selection:bg-blueGradientButtonMiddle selection:text-white">Phone</span>
+                </label>
+            </div>
+
+            <label>
+                <input
+                    name="yourname"
+                    required=""
+                    placeholder=""
+                    type="text"
+                    class="input-contact"
+                />
+                <span class="selection:bg-blueGradientButtonMiddle selection:text-white">Your Name</span>
+            </label>
+
+            <label>
+                <textarea
+                    name="message"
+                    rows="3"
+                    required=""
+                    placeholder=""
+                    class="input-contact"
+                ></textarea>
+                <span class="selection:bg-blueGradientButtonMiddle selection:text-white">Message</span>
+            </label>
+            <button class="submit-contact">Submit</button>
+        </form>
+    </section>
+    <!-- END POP UP CONTACT SECTION -->
+
     <!-- START FOOTER SECTION -->
-    <footer class="pt-9 lg:pt-12 pb-8 lg:pb-11 px-6 sm:px-16 md:px-16 lg:px-28 selection:bg-selectionBlue selection:text-white transition-all duration-500 font-jakarta italic overflow-hidden bg-cover bg-bottom" style="background-image: url('assets/images/bg/bg-footer.png')">
+    <footer class="pt-9 lg:pt-12 pb-8 lg:pb-11 px-6 sm:px-13 md:px-16 lg:px-28 selection:bg-selectionBlue selection:text-white transition-all duration-500 font-jakarta italic bg-cover bg-bottom" style="background-image: url('assets/images/bg/bg-footer.png')">
         <div class="lg:container transition-all duration-500">
             <div class="lg:flex lg:justify-between transition-all duration-500">
                 <div class="w-full lg:w-5/12 mb-8 text-slate-300 font-medium flex items-start justify-center lg:justify-normal transition-all duration-500 z-2">
                     <div>
                         <a href="#home" class="font-semibold text-2xl md:text-3xl lg:text-4xl transition-all duration-500 flex items-center gap-5 mb-5 flex-col justify-center">
-                            <span class="w-[206px] h-[206px] flex items-center justify-center bg-cover p-8" style="background-image:url('/assets/images/bg/bg-logo-footer.png')">
+                            <span class="w-[156px] h-[156px] md:w-[206px] md:h-[206px] flex items-center justify-center bg-cover p-5 md:p-8" style="background-image:url('/assets/images/bg/bg-logo-footer.png')">
                                 <img src="assets/images/logo/dies-natalis-logo.svg" alt="diesnatalis-logo" class="w-full h-full" />
                             </span>
                             <div class="glow-blue">
@@ -577,7 +756,7 @@
                         <div class="flex items-center justify-between mb-5">
                             <!-- Instagram -->
                             <a
-                            href="https://www.instagram.com/himtika_unsika?igsh=MTRzbWU4Zm5tYXFrZg=="
+                            href="https://www.instagram.com/diesnatalis.himtika?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                             target="_blank"
                             class="w-10 h-10 mr-3 rounded-full flex justify-center items-center bg-white/10 text-white hover:bg-linear-180/oklch hover:from-blueGradientButtonStart  hover:to-selectionBlue hover:text-white hover:border-none"
                             >
@@ -662,7 +841,7 @@
                     <!-- kolom 1  -->
                     <div class="w-full mb-8 text-white flex justify-center sm:justify-start lg:justify-start transition-all duration-500 z-2">
                         <div>
-                            <h3 class="font-bold text-white text-lg mb-4 md:mb-6">
+                            <h3 class="font-bold text-white text-lg mb-3 md:mb-6">
                             Media
                             </h3>
                             <ul class="text-base">
@@ -701,7 +880,7 @@
                     <!-- kolom 2 -->
                     <div class="w-full mb-8 font-[Plus Jakarta Sans] text-white flex justify-center transition-all duration-500 z-2">
                         <div>
-                            <h3 class="font-bold text-white text-lg mb-4 md:mb-6">Event</h3>
+                            <h3 class="font-bold text-white text-lg mb-3 md:mb-6">Event</h3>
                             <ul class="text-base">
                                 <li>
                                     <a
@@ -774,7 +953,7 @@
                     <!-- kolom 3 -->
                     <div class="w-full mb-8 font-[Plus Jakarta Sans] text-white flex justify-center sm:justify-end lg:justify-end transition-all duration-500 z-2">
                         <div>
-                            <h3 class="font-bold text-white text-lg mb-4 md:mb-6">
+                            <h3 class="font-bold text-white text-lg mb-3 md:mb-6">
                             Aplikasi Publik
                             </h3>
                             <ul class="text-base">
@@ -832,9 +1011,9 @@
             </div>
 
             <div class="w-full pt-6 lg:pt-8 border-t-2 border-white transition-all duration-500">
-                <p class="font-medium text-base text-white text-center">
+                <p class="font-medium text-sm md:text-base text-white text-center">
                     Licensed, Registered, and Authorized by 
-                    <span class="flex gap-2 mt-1 items-center justify-center">
+                    <span class="flex gap-2 mt-2 items-center justify-center">
                         <img
                             src="assets/images/logo/HIMTIKA.png"
                             width="40"
@@ -850,7 +1029,7 @@
     <!-- END FOOTER SECTION -->
 
     <!-- Button Back To HIMTIKA -->
-    <div class="fixed bottom-8 right-9 z-50">
+    <div class="fixed bottom-6 right-6 md:bottom-8 md:right-9 z-50">
         <a href="https://himtika.cs.unsika.ac.id/">
             <button class="Btn">
                 <div class="sign">
@@ -862,7 +1041,7 @@
                     />  
                 </div>            
                 <div class="text flex justify-center items-center h-full">
-                    <h1 class="font-jakarta text-md font-normal leading-1 mt-2">Back To <span class="text-lg font-bold italic">HIMTIKA 2025</span></h1>
+                    <h1 class="font-jakarta text-md font-normal leading-0 mt-2.5">Back To <span class="text-lg font-bold italic">HIMTIKA</span></h1>
                 </div>
             </button>
         </a>
@@ -872,6 +1051,7 @@
     <!-- px-6 sm:px-16 md:px-12 lg:px-18 -->
 
     <!-- JawaScript -->
+    <script src="assets/js/googlesheet.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
