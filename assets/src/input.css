@@ -18,6 +18,12 @@
     scroll-behavior: smooth;
 }
 
+/* supaya tidak ada scrollbar horizontal */
+html, body {
+    overflow-x: hidden;
+}
+
+
 img {
     user-select: none;
 }
@@ -1008,6 +1014,7 @@ input[type="checkbox"] {
     -webkit-text-fill-color: transparent;
     transition: all 0.5s ease-in-out;
 }
+
 #faq-section .button-with-icon-faq:hover .text-faq {
     transform: translateX(110px);
 }
