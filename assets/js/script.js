@@ -1,17 +1,20 @@
 // Tambahkan fungsi Loader
-// window.addEventListener("load", function () {
-//     const loaderWrapper = document.getElementById("loader-wrapper");
+window.addEventListener("load", function () {
+    const loaderWrapper = document.getElementById("loader-wrapper");
 
-//     if (loaderWrapper) {
-//         setTimeout(() => {
-//         loaderWrapper.classList.add("hidden-wrapper"); // Mulai transisi opacity 0.5s
-//         }, 1500); // Loader tetap tampil minimal 1.5 detik agar animasi terlihat
+    if (loaderWrapper) {
+        document.body.style.overflow = "hidden";
 
-//         setTimeout(() => {
-//         loaderWrapper.style.display = "none"; // Sembunyikan setelah transisi selesai
-//         }, 2000); // Sesuai dengan durasi transition CSS + jeda tampilan
-//     }
-// });
+        setTimeout(() => {
+        loaderWrapper.classList.add("hidden-wrapper"); // Mulai transisi opacity 0.5s
+        }, 1500); // Loader tetap tampil minimal 1.5 detik agar animasi terlihat
+
+        setTimeout(() => {
+        loaderWrapper.style.display = "none"; // Sembunyikan setelah transisi selesai
+        document.body.style.overflow = "auto";
+        }, 2000); // Sesuai dengan durasi transition CSS + jeda tampilan
+    }
+});
 
 // Mencegah Inspect Element dan View Source
 document.addEventListener("keydown", function (event) {
