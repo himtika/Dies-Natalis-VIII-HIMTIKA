@@ -1,17 +1,17 @@
 // Tambahkan fungsi Loader
-window.addEventListener("load", function () {
-    const loaderWrapper = document.getElementById("loader-wrapper");
+// window.addEventListener("load", function () {
+//     const loaderWrapper = document.getElementById("loader-wrapper");
 
-    if (loaderWrapper) {
-        setTimeout(() => {
-        loaderWrapper.classList.add("hidden-wrapper"); // Mulai transisi opacity 0.5s
-        }, 1500); // Loader tetap tampil minimal 1.5 detik agar animasi terlihat
+//     if (loaderWrapper) {
+//         setTimeout(() => {
+//         loaderWrapper.classList.add("hidden-wrapper"); // Mulai transisi opacity 0.5s
+//         }, 1500); // Loader tetap tampil minimal 1.5 detik agar animasi terlihat
 
-        setTimeout(() => {
-        loaderWrapper.style.display = "none"; // Sembunyikan setelah transisi selesai
-        }, 2000); // Sesuai dengan durasi transition CSS + jeda tampilan
-    }
-});
+//         setTimeout(() => {
+//         loaderWrapper.style.display = "none"; // Sembunyikan setelah transisi selesai
+//         }, 2000); // Sesuai dengan durasi transition CSS + jeda tampilan
+//     }
+// });
 
 // Mencegah Inspect Element dan View Source
 document.addEventListener("keydown", function (event) {
@@ -292,16 +292,28 @@ function createStarsPreloader() {
             star.style.left = `${left}%`;
             star.style.top = `${top}%`;
 
-            const moveDuration = Math.random() * 20 + 30;
+            const moveDuration = Math.random() * 20 + 5;
             const twinkleDuration = Math.random() * 2 + 1;
 
             // tambahkan delay supaya batch kedua muncul belakangan dikit
             const delay = batch * (moveDuration / 2);
 
             star.style.animation = `
-                twinkle ${twinkleDuration}s infinite ease-in-out,
-                moveStars ${moveDuration}s linear infinite ${delay}s
-            `;
+                twinkle ${twinkleDuration}s infinite ease-in-out, 
+                moveStars ${moveDuration}s linear infinite`;
+            
+            // tiap kali selesai animasi, reset posisi ke kiri biar langit tetap penuh
+            star.addEventListener("animationiteration", (e) => {
+            if (e.animationName === "moveStars") {
+                star.style.left = `-${Math.random() * 5}vw`; // muncul dari kiri
+                star.style.top = `${Math.random() * 100}%`; // posisi vertikal acak
+            }
+            });
+                
+            // star.style.animation = `
+            //     twinkle ${twinkleDuration}s infinite ease-in-out,
+            //     moveStars ${moveDuration}s linear infinite ${delay}s
+            // `;
 
             container.appendChild(star);
         }
